@@ -21,6 +21,7 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2013062501;
+$plugin->version   = 2013062502;
 $plugin->requires  = 2012120300;
 $plugin->component = 'repository_activitylinks';
+$plugin->maturity  = MATURITY_BETA;
