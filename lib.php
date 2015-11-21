@@ -35,7 +35,7 @@ class repository_activitylinks extends repository {
         $ret['nologin'] = true;
         $ret['list'] = array();
 
-        if (!$courseid = get_courseid_from_context($this->context)) {
+        if (!$courseid = $this->context->get_course_context(false)->instanceid) {
             return $ret;
         }
 
@@ -43,7 +43,7 @@ class repository_activitylinks extends repository {
 
         $list = array();
         foreach ($modinfo->get_cms() as $cm) {
-            if (!$cm->uservisible) {
+            if (!$cm->uservisible || $cm->modname == 'label') {
                 continue;
             }
 
