@@ -43,7 +43,7 @@ class repository_activitylinks extends repository {
 
         $list = array();
         foreach ($modinfo->get_cms() as $cm) {
-            if (!$cm->uservisible || $cm->modname == 'label') {
+            if (!$cm->uservisible or !$cm->has_view()) {
                 continue;
             }
 
